@@ -79,7 +79,7 @@ def send_email(payload: EmailRequest):
     try:
         params: resend.Emails.SendParams = {
         "from": "miniture@resend.dev",
-        "to": ["kwaku@meenaai.com"],
+        "to": ["kwaku@meenaai.com", "ernestyawgaisie@gmail.com"],
         "subject": payload.subject,
         "html": f"""<html>
                     <head>
