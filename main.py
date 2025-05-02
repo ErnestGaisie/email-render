@@ -19,8 +19,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-resend.api_key = "re_ftfFRKSw_9vG9apweW71WYWjPPZMje4dJ"
+# resend.api_key = "re_ftfFRKSw_9vG9apweW71WYWjPPZMje4dJ"
 
+resend.api_key = "re_E61uXPTX_5Zi2UeD4YFoqcXDVgpVjxoWd"
 class EmailRequest(BaseModel):
     to: str
     subject: str
