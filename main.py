@@ -167,7 +167,7 @@ def send_email(payload: EmailRequest):
                                             </td>
                                         </tr>
                                         </table>
-                                        <a href="https://your-website.com/shop?utm_source=email&utm_medium=summer_sale&utm_campaign=furniture" style="display: block; background-color: #0f766e; color: white; padding: 12px 16px; text-align: center; text-decoration: none; border-radius: 4px; font-weight: 500;">Shop Now</a>
+                                        <a href="https://miniture-sigma.vercel.app/" style="display: block; background-color: #0f766e; color: white; padding: 12px 16px; text-align: center; text-decoration: none; border-radius: 4px; font-weight: 500;">Shop Now</a>
                                     </td>
                                     </tr>
                                 </table>
