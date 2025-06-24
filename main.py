@@ -146,13 +146,13 @@ def send_email(payload: EmailRequest):
                                     <tr>
                                     <!-- Left Column - Image -->
                                     <td style="width: 48%; padding-right: 2%; vertical-align: top;">
-                                        <img src="https://meena-storage.s3.us-east-1.amazonaws.com/temp-output/Modular+Bondi.jpg" alt="Modern sofa" style="width: 100%; height: auto; border-radius: 8px; display: block;" />
+                                        <img src="{payload.name}" alt="Modern sofa" style="width: 100%; height: auto; border-radius: 8px; display: block;" />
                                     </td>
                                     <!-- Right Column - Content -->
                                     <td style="width: 48%; padding-left: 2%; vertical-align: top;">
-                                        <h3 style="margin: 0 0 8px 0; font-size: 20px; font-weight: 700; color: #1e293b;">Modular Bondi Latte 2-Seater Sofa in Rose Quartz</h3>
+                                        <h3 style="margin: 0 0 8px 0; font-size: 20px; font-weight: 700; color: #1e293b;">{payload.name}</h3>
                                         <p style="margin: 0 0 16px 0; color: #64748b; line-height: 1.5;">
-                                        Transform your living room with our bestselling Modular Bondi Latte 2-Seater Sofa in Rose Quartz. Crafted with premium materials and designed for both comfort and style.
+                                        Transform your living room with our bestselling {payload.name}. Crafted with premium materials and designed for both comfort and style.
                                         </p>
                                         <table cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 16px;">
                                         <tr>
