@@ -1,5 +1,5 @@
 from fastapi import FastAPI, Query
-from pymongo import MongoClient
+# from pymongo import MongoClient
 from urllib.parse import quote
 from typing import Optional
 from fastapi.middleware.cors import CORSMiddleware
@@ -31,49 +31,49 @@ class EmailRequest(BaseModel):
 
 
 # MongoDB connection
-public_key = "ErnestGaisie"
-private_key = "ErnestGaisie"
-encoded_private_key = quote(private_key)
+# public_key = "ErnestGaisie"
+# private_key = "ErnestGaisie"
+# encoded_private_key = quote(private_key)
 
-MONGO_URI = (
-    f"mongodb+srv://{public_key}:{encoded_private_key}"
-    "@meenai0.vn5dz.mongodb.net/?retryWrites=true&w=majority&tls=true"
-)
+# MONGO_URI = (
+#     f"mongodb+srv://{public_key}:{encoded_private_key}"
+#     "@meenai0.vn5dz.mongodb.net/?retryWrites=true&w=majority&tls=true"
+# )
 
-client = MongoClient(MONGO_URI)
-db = client["furniture_store"]
-collection = db["furniture_collection"]
+# client = MongoClient(MONGO_URI)
+# db = client["furniture_store"]
+# collection = db["furniture_collection"]
 
 @app.get("/")
 def root():
     return {"message": "Furniture API is live!"}
 
-@app.get("/furniture")
-def get_filtered_furniture(
-    brand: Optional[str] = Query(None),
-    category: Optional[str] = Query(None),
-    limit: int = Query(10, gt=0, le=100),  # default 10, max 100
-    skip: int = Query(0, ge=0)             # default 0, can't be negative
-):
-    query = {}
+# @app.get("/furniture")
+# def get_filtered_furniture(
+#     brand: Optional[str] = Query(None),
+#     category: Optional[str] = Query(None),
+#     limit: int = Query(10, gt=0, le=100),  # default 10, max 100
+#     skip: int = Query(0, ge=0)             # default 0, can't be negative
+# ):
+#     query = {}
 
-    if brand:
-        query["brand"] = brand
+#     if brand:
+#         query["brand"] = brand
 
-    if category:
-        query["category"] = category
+#     if category:
+#         query["category"] = category
 
-    try:
-        cursor = collection.find(query, {"_id": 0}).skip(skip).limit(limit)
-        furniture = list(cursor)
-        return {
-            "results": furniture,
-            "count": len(furniture),
-            "limit": limit,
-            "skip": skip
-        }
-    except Exception as e:
-        return {"error": str(e)}
+#     try:
+#         cursor = collection.find(query, {"_id": 0}).skip(skip).limit(limit)
+#         furniture = list(cursor)
+#         return {
+#             "results": furniture,
+#             "count": len(furniture),
+#             "limit": limit,
+#             "skip": skip
+#         }
+#     except Exception as e:
+#         return {"error": str(e)}
 
 @app.post("/email")
 def send_email(payload: EmailRequest):
