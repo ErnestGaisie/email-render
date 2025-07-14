@@ -146,7 +146,7 @@ def send_email(payload: EmailRequest):
                                     <tr>
                                     <!-- Left Column - Image -->
                                     <td style="width: 48%; padding-right: 2%; vertical-align: top;">
-                                        <img src="{payload.name}" alt="Modern sofa" style="width: 100%; height: auto; border-radius: 8px; display: block;" />
+                                        <img src="{payload.image}" alt="Modern sofa" style="width: 100%; height: auto; border-radius: 8px; display: block;" />
                                     </td>
                                     <!-- Right Column - Content -->
                                     <td style="width: 48%; padding-left: 2%; vertical-align: top;">
